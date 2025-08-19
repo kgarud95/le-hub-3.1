@@ -73,6 +73,25 @@ export default function UserDashboard() {
           <div className="lg:col-span-3">
             {activeTab === 'learning' && (
               <div className="space-y-8">
+                {/* Gamification Section */}
+                <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl p-6 text-white">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h3 className="text-xl font-bold mb-2">Level 8 Learner 🎯</h3>
+                      <p className="text-purple-100">2,450 XP • 12-day streak 🔥</p>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-2xl font-bold">89%</div>
+                      <div className="text-purple-100 text-sm">to next level</div>
+                    </div>
+                  </div>
+                  <div className="mt-4">
+                    <div className="w-full bg-purple-700 rounded-full h-2">
+                      <div className="bg-white h-2 rounded-full w-[89%]"></div>
+                    </div>
+                  </div>
+                </div>
+
                 {/* Stats */}
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="bg-white rounded-xl shadow-lg p-6">

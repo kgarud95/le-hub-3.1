@@ -197,6 +197,12 @@ export default function Header() {
                   {showUserMenu && (
                     <div className="absolute top-full right-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50">
                       <Link to="/dashboard" className="block px-4 py-2 text-gray-700 hover:bg-gray-50">My Learning</Link>
+                      {user.role === 'instructor' && (
+                        <Link to="/instructor" className="block px-4 py-2 text-gray-700 hover:bg-gray-50">Instructor Dashboard</Link>
+                      )}
+                      {user.role === 'admin' && (
+                        <Link to="/admin" className="block px-4 py-2 text-gray-700 hover:bg-gray-50">Admin Panel</Link>
+                      )}
                       <Link to="/dashboard" className="block px-4 py-2 text-gray-700 hover:bg-gray-50">Profile</Link>
                       <Link to="/dashboard" className="block px-4 py-2 text-gray-700 hover:bg-gray-50">Settings</Link>
                       <hr className="my-2" />

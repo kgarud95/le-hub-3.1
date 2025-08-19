@@ -25,6 +25,8 @@ import HomePage from './pages/HomePage';
 import CoursesPage from './pages/CoursesPage';
 import DashboardPage from './pages/DashboardPage';
 import CheckoutPage from './components/checkout/CheckoutPage';
+import InstructorDashboard from './components/instructor/InstructorDashboard';
+import AdminDashboard from './components/admin/AdminDashboard';
 
 function App() {
   return (
@@ -36,6 +38,8 @@ function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/courses" element={<CoursesPage />} />
               <Route path="/dashboard" element={<DashboardPage />} />
+              <Route path="/instructor" element={<InstructorDashboard />} />
+              <Route path="/admin" element={<AdminDashboard />} />
               <Route path="/checkout" element={<CheckoutPage onBack={() => window.history.back()} onComplete={() => window.location.href = '/dashboard'} />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>

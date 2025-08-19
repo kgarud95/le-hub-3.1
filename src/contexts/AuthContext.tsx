@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { User } from '../types';
+import { UserRole } from '../types/roles';
 
 interface AuthContextType {
   user: User | null;
@@ -49,6 +50,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         name: email.split('@')[0],
         avatar: 'https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=100',
         enrolledCourses: [],
+        role: 'student' as UserRole,
         createdAt: new Date()
       };
       
@@ -73,6 +75,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         name,
         avatar: 'https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=100',
         enrolledCourses: [],
+        role: 'student' as UserRole,
         createdAt: new Date()
       };
       

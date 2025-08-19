@@ -1,9 +1,12 @@
+import { UserRole } from './roles';
+
 export interface User {
   id: string;
   email: string;
   name: string;
   avatar?: string;
   enrolledCourses: string[];
+  role: UserRole;
   createdAt: Date;
 }
 
