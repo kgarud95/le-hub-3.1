@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { User, BookOpen, Award, Clock, TrendingUp, Settings, LogOut } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
 import { mockCourses } from '../../data/mockCourses';
+import GamificationDashboard from '../gamification/GamificationDashboard';
 
 export default function UserDashboard() {
   const { user, logout } = useAuth();
-  const [activeTab, setActiveTab] = useState<'learning' | 'profile' | 'certificates'>('learning');
+  const [activeTab, setActiveTab] = useState<'learning' | 'profile' | 'certificates' | 'achievements'>('learning');
 
   // Mock enrolled courses (in real app, this would come from API)
   const enrolledCourses = mockCourses.slice(0, 2);
@@ -13,7 +14,8 @@ export default function UserDashboard() {
   const tabs = [
     { id: 'learning', label: 'My Learning', icon: BookOpen },
     { id: 'profile', label: 'Profile', icon: User },
-    { id: 'certificates', label: 'Certificates', icon: Award }
+    { id: 'certificates', label: 'Certificates', icon: Award },
+    { id: 'achievements', label: 'Achievements', icon: TrendingUp }
   ];
 
   return (
@@ -249,6 +251,10 @@ export default function UserDashboard() {
                   <p className="text-gray-500">Complete courses to earn certificates!</p>
                 </div>
               </div>
+            )}
+
+            {activeTab === 'achievements' && (
+              <GamificationDashboard />
             )}
           </div>
         </div>

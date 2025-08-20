@@ -50,7 +50,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         name: email.split('@')[0],
         avatar: 'https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=100',
         enrolledCourses: [],
-        role: 'student' as UserRole,
+        role: email === 'instructor@test.com' ? 'instructor' as UserRole : 
+              email === 'admin@test.com' ? 'admin' as UserRole : 
+              'student' as UserRole,
         createdAt: new Date()
       };
       
